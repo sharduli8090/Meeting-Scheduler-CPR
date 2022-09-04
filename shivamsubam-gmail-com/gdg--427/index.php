@@ -1,0 +1,1 @@
+<?php $spc_user = "shivamsubam@gmail.com"; $spc_path = "shivamsubam-gmail-com"; $spc_token = "gdg--427"; include($_SERVER["DOCUMENT_ROOT"] . "/assets/server/tokens.php");

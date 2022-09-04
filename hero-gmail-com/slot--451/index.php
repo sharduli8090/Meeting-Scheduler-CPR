@@ -1,0 +1,1 @@
+<?php $spc_user = "hero@gmail.com"; $spc_path = "hero-gmail-com"; $spc_token = "slot--451"; include($_SERVER["DOCUMENT_ROOT"] . "/assets/server/tokens.php");

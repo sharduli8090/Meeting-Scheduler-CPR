@@ -1,0 +1,8 @@
+:root {
+    --color-background: #fff0;
+    --color-text-1: 570A57;2E0249;
+}
+:root[dark-mode] {
+    --color-background: #fff0;
+    --color-text-1: 570A57;2E0249;
+}

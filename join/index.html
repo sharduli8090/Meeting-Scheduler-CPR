@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>CPR</title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/assets/css/styles.css">
+
+        <script src="/assets/framework/fontawesome.all.min.js"></script>
+    </head>
+    <body>
+        <div class="root">
+            <main class="main">
+                <div class="form-group">
+                    <label class="form-label" for="slotlimit">Allocate Slot Time</label>
+                    <select class="form-input" id="slotlimit" required>
+                        <option value="">--Select a slot--</option>
+                    </select>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        const trime = time => time.toLowerCase().replaceAll(" ", "").replaceAll(":", "_");
+        const select = $("#slotlimit");
+        const slots = ["12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"];
+        for (var i = 0; i < slots.length; i++) {
+            let time1 = slots[i] + ":00 AM - " + slots[i] + ":30 AM";
+            let time2 = slots[i] + ":30 AM - " + (slots[i + 1] ? slots[i + 1] + ":00 AM" : slots[0] + ":00 PM");
+            select.append($(`<option value="${trime(time1)}">${time1}</option>`));
+            select.append($(`<option value="${trime(time2)}">${time2}</option>`));
+        }
+        for (var i = 0; i < slots.length; i++) {
+            let time1 = slots[i] + ":00 PM - " + slots[i] + ":30 PM";
+            let time2 = slots[i] + ":30 PM - " + (slots[i + 1] ? slots[i + 1] + ":00 PM" : slots[0] + ":00 AM");
+            select.append($(`<option value="${trime(time1)}">${time1}</option>`));
+            select.append($(`<option value="${trime(time2)}">${time2}</option>`));
+        }
+    }());
+</script>
